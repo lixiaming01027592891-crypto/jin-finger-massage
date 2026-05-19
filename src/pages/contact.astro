@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = '聯絡我們｜金手指按摩 - 24小時預約專線與常見問題';
+const description = '金手指按摩24小時營業全年無休。歡迎來電預約或透過LINE與我們聯繫。我們也整理了常見問題，幫助您更快了解我們的服務。';
+const keywords = '按摩預約,24小時按摩預約,按摩店電話,按摩店地址,常見問題,按摩FAQ';
+
+const faqs = [
+  { q: '需要事先預約嗎？', a: '建議提前預約以確保座位，但我們也接受現場客人。24小時營業，隨時歡迎您。' },
+  { q: '有哪些付款方式？', a: '我們接受現金、信用卡、LINE Pay、街口支付等多種付款方式。' },
+  { q: '有提供停車位嗎？', a: '店門前可停汽機車，附近也有收費停車場。' },
+  { q: '男女客人都接受嗎？', a: '是的，我們歡迎所有客人，並提供專業、安全的服務環境。' },
+  { q: '按摩會痛嗎？', a: '師傅會根據您的耐受度調整力道，隨時可以溝通。我們追求「痠中帶爽」的舒適體驗。' },
+  { q: '有什麼注意事項？', a: '孕婦、心血管疾病患者、皮膚發炎或有傷口者，請先告知師傅或諮詢醫師建議。' },
+  { q: '可以指定師傅嗎？', a: '可以，預約時可以指定您喜歡的師傅。如該師傅正在服務中，我們會安排其他同等專業的師傅為您服務。' },
+  { q: '有會員優惠嗎？', a: '有！加入會員可享每次消費95折，並累積點數兌換免費服務。詳情請來電或到店諮詢。' },
+  { q: '取消預約需要提前告知嗎？', a: '建議提前2小時告知取消，以便我們將座位安排給其他客人。' },
+  { q: '可以使用電子發票嗎？', a: '可以，我們提供電子發票，可透過載具歸戶或手機條碼索取。' },
+];
+
+const businessHours = [
+  { day: '週一', hours: '24小時' },
+  { day: '週二', hours: '24小時' },
+  { day: '週三', hours: '24小時' },
+  { day: '週四', hours: '24小時' },
+  { day: '週五', hours: '24小時' },
+  { day: '週六', hours: '24小時' },
+  { day: '週日', hours: '24小時' },
+];
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/contact">
+  <Navbar />
+  
+  <!-- Page Header -->
+  <section class="pt-32 pb-12 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 to-stone-950"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-gold-500 text-sm tracking-widest uppercase">Contact Us</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-gold-300 mt-2 mb-4">聯絡我們</h1>
+      <p class="text-stone-400 max-w-2xl mx-auto">24小時全年無休，隨時歡迎您的來電與預約</p>
+    </div>
+  </section>
+
+  <!-- Contact Cards -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="card-glass p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center">
+            <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h2 class="text-xl font-bold text-gold-300 mb-2">電話預約</h2>
+          <p class="text-stone-400 text-sm mb-4">直接來電，快速預約</p>
+          <a href="tel:+886-2-XXXX-XXXX" class="text-2xl font-bold text-gold-400 hover:text-gold-300 transition-colors">02-XXXX-XXXX</a>
+          <a href="tel:+886-2-XXXX-XXXX" class="btn-primary mt-4 block text-center">立即撥打</a>
+        </div>
+        <div class="card-glass p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center">
+            <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h2 class="text-xl font-bold text-gold-300 mb-2">LINE 預約</h2>
+          <p class="text-stone-400 text-sm mb-4">加入LINE好友，隨時預約</p>
+          <span class="text-lg text-stone-300">@goldenfinger</span>
+          <a href="https://line.me/ti/p/~@goldenfinger" target="_blank" rel="noopener noreferrer" class="btn-primary mt-4 block text-center">加入LINE</a>
+        </div>
+        <div class="card-glass p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center">
+            <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h2 class="text-xl font-bold text-gold-300 mb-2">電子郵件</h2>
+          <p class="text-stone-400 text-sm mb-4">合作洽詢與建議</p>
+          <span class="text-lg text-stone-300">info@goldenfinger.tw</span>
+          <a href="mailto:info@goldenfinger.tw" class="btn-outline mt-4 block text-center">寄送郵件</a>
+        </div>
+      </div>
+
+      <!-- Business Hours -->
+      <div class="card-glass p-8 mb-16">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold text-gold-300 mb-2">營業時間</h2>
+          <p class="text-stone-400">全年無休，隨時為您服務</p>
+        </div>
+        <div class="max-w-md mx-auto">
+          <div class="flex items-center justify-between p-4 bg-gold-500/5 rounded-xl mb-4">
+            <span class="text-stone-200 font-medium flex items-center gap-2">
+              <svg class="text-gold-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              每日營業時間
+            </span>
+            <span class="text-gold-400 font-bold text-lg">24小時</span>
+          </div>
+          <div class="grid grid-cols-7 gap-2 text-center">
+            {businessHours.map(b => (
+              <div class="p-2 bg-stone-800/50 rounded-lg">
+                <div class="text-stone-500 text-xs mb-1">{b.day}</div>
+                <div class="text-gold-400 text-xs font-bold">{b.hours}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="card-glass p-8">
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-bold text-gold-300 mb-2">店址資訊</h2>
+          <p class="text-stone-400">台北市XX區XX路XX號</p>
+          <p class="text-stone-500 text-sm mt-1">捷運XX站 X號出口步行3分鐘</p>
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-stone-800 h-64 md:h-80 flex items-center justify-center">
+          <div class="text-center">
+            <svg class="text-stone-600 mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p class="text-stone-500">Google Maps 地圖</p>
+            <a href="https://maps.google.com/?q=金手指按摩" target="_blank" rel="noopener noreferrer" class="text-gold-400 hover:text-gold-300 text-sm mt-1 inline-block">在 Google Maps 中開啟</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 bg-stone-900/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-gold-500 text-sm tracking-widest uppercase">FAQ</span>
+        <h2 class="section-title mt-2">常見問題</h2>
+        <p class="section-subtitle">整理了我們最常收到的問題，幫助您更快了解我們的服務</p>
+      </div>
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="card-glass group" name="faq">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+              <span class="text-stone-200 font-medium text-left flex-1 pr-4">{faq.q}</span>
+              <svg class="text-gold-500 flex-shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-stone-400 text-sm leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

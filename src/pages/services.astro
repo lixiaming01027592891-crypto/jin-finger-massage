@@ -1,0 +1,257 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = '服務項目｜金手指按摩 - 腳底按摩、全身指壓、精油油壓、肩頸舒壓';
+const description = '金手指按摩提供四大專業服務：腳底按摩、全身指壓、精油油壓、肩頸舒壓。24小時全年無休，專業師傅為您客製化最適合的放鬆體驗。';
+const keywords = '腳底按摩,全身指壓,精油油壓,肩頸舒壓,按摩服務,24小時按摩,台北按摩,養生會館';
+
+const services = [
+  {
+    id: 'foot',
+    title: '腳底按摩',
+    subtitle: 'Foot Reflexology Massage',
+    image: '/images/service-foot.jpg',
+    description: '腳底按摩是透過刺激足底的反射區，來達到促進血液循環、緩解疲勞、放鬆身心的效果。金手指的腳底按摩結合傳統中醫理論與現代舒壓手法，讓您在舒適的環境中享受專業的足部調理。',
+    prices: [
+      { name: '腳底按摩 60分鐘', price: '1,200', original: '1,500', note: '純手技足底調理' },
+      { name: '腳底按摩 90分鐘', price: '1,600', original: '2,000', note: '含中藥足浴泡腳' },
+    ],
+    features: [
+      '足底反射區精準調理，活絡氣血循環',
+      '中藥足浴泡腳，溫暖身心',
+      '針對足底各穴位進行深度按壓',
+      '舒緩腿部肌肉緊繃，消除水腫',
+      '提供養生茶飲，按摩後補充元氣',
+    ],
+    duration: '60 / 90 分鐘',
+    badge: '人氣推薦',
+  },
+  {
+    id: 'body',
+    title: '全身指壓',
+    subtitle: 'Full Body Acupressure',
+    image: '/images/service-body.jpg',
+    description: '全身指壓沿著人體十二經絡與奇經八脈，針對穴位進行深度按壓。金手指的師傅精通人體經絡走向，能準確找到氣血阻塞之處，以適當力道疏通經脈，釋放累積已久的身體壓力。',
+    prices: [
+      { name: '全身指壓 60分鐘', price: '1,500', original: '1,800', note: '重點部位加強' },
+      { name: '全身指壓 90分鐘', price: '2,000', original: '2,500', note: '全身深度調理' },
+      { name: '全身指壓 120分鐘', price: '2,600', original: '3,200', note: '完整經絡調理' },
+    ],
+    features: [
+      '經絡穴位精準定位，疏通全身氣血',
+      '針對肩頸、腰背等易痠痛部位加強',
+      '深度筋膜放鬆，釋放肌肉緊繃',
+      '改善睡眠品質，提升精神活力',
+      '師傅依個人狀況調整力道與手法',
+    ],
+    duration: '60 / 90 / 120 分鐘',
+    badge: '招牌服務',
+  },
+  {
+    id: 'oil',
+    title: '精油油壓',
+    subtitle: 'Aromatherapy Oil Massage',
+    image: '/images/service-oil.jpg',
+    description: '精油油壓結合天然植物精油與專業按摩手法，溫潤的精油搭配流暢的推壓動作，能深入肌膚底層，同時透過芳香分子的嗅吸作用，達到身心靈的全面放鬆與平衡。',
+    prices: [
+      { name: '精油油壓 60分鐘', price: '1,800', original: '2,200', note: '單一精油基礎方案' },
+      { name: '精油油壓 90分鐘', price: '2,400', original: '3,000', note: '複方精油進階方案' },
+      { name: '精油油壓 120分鐘', price: '3,200', original: '4,000', note: '客製化頂級方案' },
+    ],
+    features: [
+      '嚴選天然植物萃取精油，五款任選',
+      '薰衣草、茶樹、尤加利、玫瑰、檸檬草',
+      '淋巴引流手法，促進代謝循環',
+      '溫熱精油深層滲透，舒緩肌肉緊繃',
+      '獨立包廂淋浴設備，私密舒適',
+    ],
+    duration: '60 / 90 / 120 分鐘',
+    badge: 'VIP推薦',
+  },
+  {
+    id: 'shoulder',
+    title: '肩頸舒壓',
+    subtitle: 'Neck & Shoulder Therapy',
+    image: '/images/service-shoulder.jpg',
+    description: '肩頸舒壓專為長期使用電腦、久坐辦公室的現代人設計。針對肩頸部位的僵硬痠痛進行重點調理，配合頭部穴位按摩，有效舒緩因壓力與姿勢不良造成的緊繃不適。',
+    prices: [
+      { name: '肩頸舒壓 30分鐘', price: '600', original: '800', note: '快速舒緩方案' },
+      { name: '肩頸舒壓 60分鐘', price: '1,000', original: '1,300', note: '完整調理方案' },
+    ],
+    features: [
+      '針對肩頸斜方肌、提肩胛肌深度放鬆',
+      '頭部百會、風池等穴位指壓',
+      '上背經絡梳理，改善血液循環',
+      '適合午休時間或下班後快速舒緩',
+      '可有效改善因壓力引起的頭痛與失眠',
+    ],
+    duration: '30 / 60 分鐘',
+    badge: '上班族首選',
+  },
+];
+
+const comboServices = [
+  { name: '腳底 + 全身指壓 90分鐘', price: '2,200', original: '2,800', desc: '足底調理後接全身指壓，雙重放鬆' },
+  { name: '腳底 + 精油油壓 120分鐘', price: '3,000', original: '3,800', desc: '足底調理後接精油油壓，極致享受' },
+  { name: '肩頸舒壓 + 全身指壓 90分鐘', price: '2,000', original: '2,500', desc: '肩頸重點加全身調理，完整舒緩' },
+];
+
+const oilScents = [
+  { name: '薰衣草', desc: '舒緩放鬆、助眠安神', color: 'bg-purple-500/20 text-purple-300' },
+  { name: '茶樹', desc: '清新淨化、抗菌防護', color: 'bg-green-500/20 text-green-300' },
+  { name: '尤加利', desc: '暢通呼吸、提神醒腦', color: 'bg-blue-500/20 text-blue-300' },
+  { name: '玫瑰', desc: '滋養肌膚、愉悅心情', color: 'bg-pink-500/20 text-pink-300' },
+  { name: '檸檬草', desc: '消除疲勞、提振精神', color: 'bg-yellow-500/20 text-yellow-300' },
+];
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/services">
+  <Navbar />
+  
+  <!-- Page Header -->
+  <section class="pt-32 pb-12 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 to-stone-950"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-gold-500 text-sm tracking-widest uppercase">Services</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-gold-300 mt-2 mb-4">服務項目</h1>
+      <p class="text-stone-400 max-w-2xl mx-auto">專業多元的按摩服務，針對不同需求客製化專屬放鬆體驗</p>
+    </div>
+  </section>
+
+  <!-- Service Navigation Anchor -->
+  <div class="sticky top-16 md:top-20 z-40 bg-stone-900/95 backdrop-blur border-y border-stone-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex overflow-x-auto gap-1 py-2 scrollbar-hide">
+        {services.map(s => (
+          <a href={`#${s.id}`} class="flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium text-stone-400 hover:text-gold-300 hover:bg-stone-800/50 transition-all whitespace-nowrap">
+            {s.title}
+          </a>
+        ))}
+        <a href="#combo" class="flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium text-gold-400 hover:text-gold-300 hover:bg-gold-500/10 transition-all whitespace-nowrap">
+          組合優惠
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Detail -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      {services.map((service, i) => (
+        <div id={service.id} class={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-gold-500/5">
+              <img src={service.image} alt={`${service.title}服務`} class="w-full h-80 md:h-96 object-cover" loading="lazy" width="600" height="400" />
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 bg-gold-500 text-stone-950 text-xs font-bold rounded-full">{service.badge}</span>
+              </div>
+            </div>
+          </div>
+          <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+            <span class="text-gold-500 text-sm tracking-wider">{service.subtitle}</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gold-300 mt-1 mb-4">{service.title}</h2>
+            <p class="text-stone-400 leading-relaxed mb-6">{service.description}</p>
+            
+            <div class="space-y-3 mb-8">
+              {service.features.map(f => (
+                <div class="flex items-start gap-3">
+                  <svg class="text-gold-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="text-stone-300 text-sm">{f}</span>
+                </div>
+              ))}
+            </div>
+
+            <!-- Price Cards -->
+            <div class="space-y-3">
+              {service.prices.map(p => (
+                <div class="card-glass p-4 flex items-center justify-between">
+                  <div>
+                    <div class="text-stone-200 font-medium">{p.name}</div>
+                    <div class="text-stone-500 text-xs">{p.note}</div>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-stone-600 text-sm line-through">NT${p.original}</span>
+                    <span class="text-gold-400 text-xl font-bold ml-2">NT${p.price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="flex items-center gap-2 mt-6 text-stone-500 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              服務時間：{service.duration}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Oil Scents Section -->
+  <section class="py-16 bg-stone-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-title">精油香氛選擇</h2>
+        <p class="section-subtitle">五款天然精油，為您打造專屬的嗅覺饗宴</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {oilScents.map(scent => (
+          <div class="card-glass p-6 text-center">
+            <div class={`w-14 h-14 mx-auto mb-4 rounded-full ${scent.color} flex items-center justify-center`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <h3 class="text-stone-200 font-medium mb-1">{scent.name}</h3>
+            <p class="text-stone-500 text-xs">{scent.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Combo Section -->
+  <section id="combo" class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-gold-500 text-sm tracking-widest uppercase">Special Offers</span>
+        <h2 class="section-title mt-2">組合優惠方案</h2>
+        <p class="section-subtitle">多項服務組合，享受更完整的放鬆體驗與優惠價格</p>
+      </div>
+      <div class="space-y-4">
+        {comboServices.map(combo => (
+          <div class="card-glass p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-gold-300 mb-1">{combo.name}</h3>
+              <p class="text-stone-400 text-sm">{combo.desc}</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="text-right">
+                <span class="text-stone-600 text-sm line-through">NT${combo.original}</span>
+                <div class="text-gold-400 text-2xl font-bold">NT${combo.price}</div>
+              </div>
+              <a href="tel:+886-2-XXXX-XXXX" class="btn-primary text-sm whitespace-nowrap">預約</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-gold-900/20 to-stone-900 border-t border-stone-800/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-gold-300 mb-4">找到適合您的服務了嗎？</h2>
+      <p class="text-stone-400 mb-8">如果不確定該選擇哪種服務，歡迎來電諮詢，我們會依您的需求推薦最適合的方案。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+886-2-XXXX-XXXX" class="btn-primary flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          電話諮詢
+        </a>
+        <a href="/contact" class="btn-outline">前往聯絡我們</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,113 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const {
+  title = '金手指按摩｜24小時專業按摩養生會館',
+  description = '金手指按摩提供24小時專業按摩服務，包括腳底按摩、全身指壓、精油油壓、肩頸舒壓。專業師傅、舒適環境，隨時為您舒緩疲憊。',
+  keywords = '24小時按摩,腳底按摩,全身按摩,指壓,油壓,肩頸按摩,按摩推薦,養生會館,金手指',
+  ogImage = '/images/og-image.jpg',
+  canonical,
+} = Astro.props;
+
+const siteUrl = 'https://jin-finger-massage.com';
+const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
+---
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0C0A09" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={fullCanonical} />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:site_name" content="金手指按摩" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={fullCanonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
+    
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "金手指按摩",
+      "description": description,
+      "url": siteUrl,
+      "telephone": "+886-2-XXXX-XXXX",
+      "image": `${siteUrl}${ogImage}`,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "XX路XX號",
+        "addressLocality": "台北市",
+        "addressRegion": "台灣",
+        "postalCode": "100"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.033,
+        "longitude": 121.565
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "328"
+      }
+    })} />
+    
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "金手指按摩",
+      "url": siteUrl,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${siteUrl}/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+
+    <style is:inline>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap');
+    </style>
+  </head>
+  <body class="bg-stone-950 text-stone-50 antialiased min-h-screen">
+    <slot />
+  </body>
+</html>

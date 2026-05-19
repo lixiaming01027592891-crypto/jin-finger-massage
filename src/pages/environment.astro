@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = '環境展示｜金手指按摩 - 現代東方質感按摩空間';
+const description = '金手指按摩打造現代東方質感的舒適按摩環境。獨立包廂、柔和燈光、舒壓音樂，讓您從踏入的那一刻起就感受到身心的轉變。24小時營業。';
+const keywords = '按摩環境,按摩包廂,養生會館,按摩店環境,台北按摩,24小時按摩';
+
+const envCategories = [
+  {
+    title: '獨立包廂',
+    desc: '每間包廂皆為獨立空間，配備舒適按摩床、柔和燈光與舒壓音樂，確保您的隱私與舒適。',
+    images: ['/images/env-room1.jpg', '/images/env-room2.jpg'],
+  },
+  {
+    title: '足湯區',
+    desc: '中式藥材足湯區，讓您在按摩前先以溫熱藥湯暖足，放鬆身心。',
+    images: ['/images/service-foot.jpg', '/images/env-room1.jpg'],
+  },
+  {
+    title: '休息區',
+    desc: '寬敞舒適的休息區域，按摩後可在此享用養生茶飲，靜心放鬆。',
+    images: ['/images/env-room2.jpg', '/images/hero-bg.jpg'],
+  },
+];
+
+const amenities = [
+  { icon: 'wifi', title: '免費WiFi', desc: '全店覆蓋高速無線網路' },
+  { icon: 'droplet', title: '淋浴設備', desc: '獨立包廂附設淋浴空間' },
+  { icon: 'coffee', title: '養生茶飲', desc: '精選草本養生茶免費供應' },
+  { icon: 'car', title: '便利停車', desc: '店門前可停汽機車' },
+  { icon: 'tv', title: '影音娛樂', desc: '包廂內提供電視與音樂' },
+  { icon: 'zap', title: '快速充電', desc: '各座位配備充電插座' },
+];
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/environment">
+  <Navbar />
+  
+  <!-- Page Header -->
+  <section class="pt-32 pb-12 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 to-stone-950"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-gold-500 text-sm tracking-widest uppercase">Environment</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-gold-300 mt-2 mb-4">環境展示</h1>
+      <p class="text-stone-400 max-w-2xl mx-auto">精心打造的放鬆空間，讓您從踏入的那一刻起就感受到身心的轉變</p>
+    </div>
+  </section>
+
+  <!-- Environment Gallery -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      {envCategories.map((cat, i) => (
+        <div class={`grid lg:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+            <div class="grid grid-cols-2 gap-4">
+              {cat.images.map((img, j) => (
+                <div class={`rounded-2xl overflow-hidden shadow-lg ${j === 0 ? 'col-span-2 md:col-span-1' : ''}`}>
+                  <img src={img} alt={`${cat.title}環境照片${j + 1}`} class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="300" />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+            <h2 class="text-2xl md:text-3xl font-bold text-gold-300 mb-4">{cat.title}</h2>
+            <p class="text-stone-400 leading-relaxed">{cat.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Amenities -->
+  <section class="py-16 bg-stone-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-gold-500 text-sm tracking-widest uppercase">Amenities</span>
+        <h2 class="section-title mt-2">貼心設施</h2>
+        <p class="section-subtitle">完善的設施設備，讓您的每次到訪都舒適便利</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {amenities.map(a => (
+          <div class="card-glass p-5 text-center">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gold-500/10 flex items-center justify-center">
+              {a.icon === 'wifi' && <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>}
+              {a.icon === 'droplet' && <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>}
+              {a.icon === 'coffee' && <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>}
+              {a.icon === 'car' && <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>}
+              {a.icon === 'tv' && <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>}
+              {a.icon === 'zap' && <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
+            </div>
+            <h3 class="text-stone-200 text-sm font-medium mb-1">{a.title}</h3>
+            <p class="text-stone-500 text-xs">{a.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Info -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="card-glass p-8 text-center">
+        <h2 class="text-2xl font-bold text-gold-300 mb-4">交通資訊</h2>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gold-500/10 flex items-center justify-center">
+              <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="text-stone-200 font-medium mb-1">地址</h3>
+            <p class="text-stone-400 text-sm">台北市XX區XX路XX號</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gold-500/10 flex items-center justify-center">
+              <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <h3 class="text-stone-200 font-medium mb-1">捷運</h3>
+            <p class="text-stone-400 text-sm">捷運XX站 X號出口步行3分鐘</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gold-500/10 flex items-center justify-center">
+              <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+            </div>
+            <h3 class="text-stone-200 font-medium mb-1">停車</h3>
+            <p class="text-stone-400 text-sm">店前可停汽機車，附近也有收費停車場</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
