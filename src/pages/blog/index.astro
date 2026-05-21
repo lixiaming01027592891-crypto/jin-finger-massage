@@ -4,60 +4,122 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const title = '部落格｜金手指按摩 - 按摩知識、養生保健、舒壓技巧';
-const description = '金手指按摩部落格即將上線，敬請期待專業按摩知識、養生保健秘訣與舒壓技巧分享。';
-const keywords = '按摩知識,按摩部落格,台北按摩推薦,養生保健,舒壓技巧';
+const description = '金手指按摩部落格分享專業按摩知識、養生保健秘訣、舒壓技巧與台北按摩推薦，助您了解身體保養的正確方式。';
+const keywords = '按摩知識,按摩部落格,台北按摩推薦,腳底按摩好處,肩頸痠痛,精油按摩,養生保健,舒壓技巧,按摩注意事項';
 
-const comingSoon = [
-  { title: '台北按摩推薦｜深夜疲勞？24小時按摩會館讓你隨時放鬆', category: '台北按摩推薦' },
-  { title: '腳底按摩的好處｜你不知道的足底反射區秘密', category: '按摩知識' },
-  { title: '肩頸痠痛怎麼辦？上班族必看肩頸舒壓完整指南', category: '舒壓技巧' },
-  { title: '精油按摩怎麼選？五種精油功效完整介紹與推薦', category: '精油知識' },
-  { title: '第一次按摩要注意什麼？新手必讀按摩會館完整攻略', category: '按摩入門' },
+const posts = [
+  {
+    slug: 'taipei-home-massage-service',
+    title: '台北男士到府按摩｜到府按摩服務流程與價格說明',
+    excerpt: '台北男士到府按摩服務怎麼預約？本文介紹台北男士到府按摩的服務項目、預約流程、價格說明與挑選重點。',
+    image: '/images/service-foot.jpg',
+    date: '2026-05-21',
+    category: '按摩服務',
+    readTime: '6 分鐘',
+  },
+  {
+    slug: 'taipei-mens-massage-service',
+    title: '台北男士按摩｜全身按摩服務項目與預約流程',
+    excerpt: '台北男士按摩有哪些服務項目？本文介紹台北男士按摩的服務內容、預約流程、價格說明與挑選標準。',
+    image: '/images/service-body.jpg',
+    date: '2026-05-21',
+    category: '按摩服務',
+    readTime: '7 分鐘',
+  },
+  {
+    slug: 'taipei-home-massage-guide',
+    title: '台北男士到府按摩推薦｜到府按摩服務流程與價格說明',
+    excerpt: '台北男士到府按摩推薦怎麼選？本文介紹挑選標準、服務流程、價格說明與注意事項。',
+    image: '/images/service-oil.jpg',
+    date: '2026-05-21',
+    category: '按摩推薦',
+    readTime: '6 分鐘',
+  },
+  {
+    slug: 'taipei-mens-massage-choice',
+    title: '台北男士按摩推薦｜按摩服務項目與價格比較',
+    excerpt: '台北男士按摩推薦怎麼選？本文介紹挑選標準、服務項目、價格比較與評價怎麼看。',
+    image: '/images/service-shoulder.jpg',
+    date: '2026-05-21',
+    category: '按摩推薦',
+    readTime: '7 分鐘',
+  },
 ];
+
+const categories = ['全部', '按摩服務', '按摩推薦'];
 ---
 
 <Layout title={title} description={description} keywords={keywords} canonical="/blog">
   <Navbar />
-  
+
   <!-- Page Header -->
   <section class="pt-32 pb-12 relative">
     <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 to-stone-950"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="text-gold-500 text-sm tracking-widest uppercase">Blog</span>
       <h1 class="text-4xl md:text-5xl font-bold text-gold-300 mt-2 mb-4">按摩知識部落格</h1>
-      <p class="text-stone-400 max-w-2xl mx-auto">專業按摩知識、養生保健秘訣、舒壓技巧分享</p>
+      <p class="text-stone-400 max-w-2xl mx-auto">專業按摩知識、服務介紹與挑選指南</p>
     </div>
   </section>
 
-  <!-- Coming Soon -->
+  <!-- Blog List -->
   <section class="py-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      
-      <div class="card-glass p-12 mb-12">
-        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gold-500/10 flex items-center justify-center">
-          <svg class="text-gold-400" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <h2 class="text-2xl md:text-3xl font-bold text-gold-300 mb-3">精彩內容即將上架</h2>
-        <p class="text-stone-400 mb-2">我們正在準備高品質的按摩知識文章</p>
-        <p class="text-stone-500 text-sm">敬請期待，文章上線後將第一時間與您分享</p>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Article Preview List -->
-      <div class="text-left space-y-4">
-        <h3 class="text-stone-300 font-medium mb-6 text-center">預計上架文章</h3>
-        {comingSoon.map((post, i) => (
-          <div class="card-glass p-5 flex items-center gap-4 opacity-60">
-            <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-500 text-sm font-bold flex-shrink-0">
-              {String(i + 1).padStart(2, '0')}
-            </div>
-            <div class="flex-1 min-w-0">
-              <span class="text-gold-500/60 text-xs">{post.category}</span>
-              <p class="text-stone-400 text-sm truncate">{post.title}</p>
-            </div>
-            <span class="text-stone-600 text-xs flex-shrink-0">即將上架</span>
-          </div>
+      <!-- Category Filter -->
+      <div class="flex flex-wrap gap-2 justify-center mb-12">
+        {categories.map(cat => (
+          <span class="px-4 py-2 rounded-full text-sm font-medium bg-stone-800 text-stone-400 border border-stone-700/50">{cat}</span>
         ))}
       </div>
+
+      <!-- Post Grid -->
+      <div class="grid md:grid-cols-2 gap-8">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="card-glass overflow-hidden group block hover:border-gold-500/30 transition-all duration-500">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3 text-xs text-stone-500">
+                <span class="text-gold-400">{post.category}</span>
+                <span>|</span>
+                <span>{post.date}</span>
+                <span>|</span>
+                <span>閱讀時間 {post.readTime}</span>
+              </div>
+              <h2 class="text-xl font-bold text-stone-100 mb-3 group-hover:text-gold-300 transition-colors leading-snug">
+                {post.title}
+              </h2>
+              <p class="text-stone-400 text-sm leading-relaxed">{post.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Schema: Blog -->
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "金手指按摩部落格",
+        "description": description,
+        "url": "https://jin-finger-massage.com/blog",
+        "publisher": { "@type": "Organization", "name": "金手指按摩" },
+        "blogPost": posts.map(p => ({
+          "@type": "BlogPosting",
+          "headline": p.title,
+          "description": p.excerpt,
+          "url": `https://jin-finger-massage.com/blog/${p.slug}`,
+          "datePublished": p.date,
+          "image": `https://jin-finger-massage.com${p.image}`,
+          "author": { "@type": "Organization", "name": "金手指按摩" }
+        }))
+      })} />
 
     </div>
   </section>
@@ -66,7 +128,7 @@ const comingSoon = [
   <section class="py-16 bg-stone-900/50 border-t border-stone-800/50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-2xl md:text-3xl font-bold text-gold-300 mb-4">想親身體驗？</h2>
-      <p class="text-stone-400 mb-8">不如先來金手指按摩，感受專業師傅的手藝。24小時營業，隨時歡迎。</p>
+      <p class="text-stone-400 mb-8">閱讀完知識，不如親自感受專業按摩的手藝。24小時營業，隨時歡迎。</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/services" class="btn-primary flex items-center justify-center gap-2">查看服務項目</a>
         <a href="/contact" class="btn-outline">聯絡我們</a>
