@@ -6,667 +6,247 @@ import Footer from '../../components/Footer.astro';
 const title = "台北男士按摩推薦｜按摩服務項目與價格比較 - 金手指按摩";
 const description = "台北男士按摩推薦怎麼選？本文介紹台北男士按摩推薦的挑選標準、服務項目、價格比較與評價怎麼看，幫助你找到正規、透明的按摩服務。";
 const keywords = "台北男士按摩推薦, 台北男士按摩推薦怎麼選, 台北男士按摩服務項目, 台北男士按摩價格比較, 台北男士按摩評價";
-const slug = "taipei-mens-massage-choice";
-const date = "2026-05-21";
-const author = "金手指按摩團隊";
-const category = "按摩服務";
 const canonical = "/blog/taipei-mens-massage-choice";
+const date = "2026-05-28";
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical={canonical}>
+<Layout title={title} description={description} keywords={keywords} canonical={canonical} ogImage="../../images/blog-massage-space-2.jpg">
   <Navbar />
->
-  <article class="max-w-4xl mx-auto px-4 py-12">
-    <!-- Header -->
-    <header class="mb-10">
-      <nav class="text-sm text-stone-400 mb-4">
-        <a href="/" class="hover:text-amber-600 transition-colors">首頁</a>
-        <span class="mx-2">/</span>
-        <a href="/blog" class="hover:text-amber-600 transition-colors">部落格</a>
-        <span class="mx-2">/</span>
-        <span class="text-stone-500">台北男士按摩推薦</span>
-      </nav>
-      <h1 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4 leading-tight">
-        台北男士按摩推薦｜正規按摩服務介紹與選擇重點
-      </h1>
-      <div class="flex items-center gap-4 text-sm text-stone-500 mb-6">
-        <span class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-          {date}
-        </span>
-        <span class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-          </svg>
-          {author}
-        </span>
-        <span class="px-2 py-1 bg-amber-100 text-amber-800 rounded-full text-xs">{category}</span>
-      </div>
-    </header>
 
-    <!-- Hero Image -->
-    <div class="mb-10">
-      <img 
-        src="/images/blog/taipei-mens-massage-choice-hero.jpg" 
-        alt="台北男士按摩推薦 - 正規按摩服務介紹" 
-        class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
-        loading="eager"
-      />
+  <article itemscope itemtype="https://schema.org/BlogPosting">
+    <meta itemprop="headline" content={title} />
+    <meta itemprop="description" content={description} />
+    <meta itemprop="datePublished" content={date} />
+    <meta itemprop="author" content="金手指按摩" />
+
+    <!-- Hero -->
+    <section class="pt-28 pb-8 relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 to-stone-950"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6 text-sm text-stone-500">
+          <a href="/blog" class="text-gold-400 hover:text-gold-300">部落格</a>
+          <span>/</span>
+          <span class="text-gold-400">按摩推薦</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gold-300 mb-4 leading-tight" itemprop="headline">
+          台北男士按摩推薦｜正規按摩服務介紹與選擇重點
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-stone-500">
+          <span class="text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full">按摩推薦</span>
+          <time itemprop="datePublished" datetime="2026-05-28">2026年5月28日</time>
+          <span>閱讀時間 7 分鐘</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Image -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div class="rounded-2xl overflow-hidden">
+        <img src="../../images/blog-massage-space-2.jpg" alt="按摩服務空間" class="w-full h-64 md:h-96 object-cover" itemprop="image" loading="eager" />
+      </div>
     </div>
 
-    <!-- 首段 -->
-    <section class="mb-10">
-      <p class="text-lg text-stone-700 leading-relaxed">
-        在台北尋找適合的按摩服務，許多男士會想知道<strong>台北男士按摩推薦</strong>該怎麼選。市面上按摩服務種類眾多，從肩頸按摩、背部按摩到全身肌肉按摩，服務形式也有到府與門市兩種選擇。本文將介紹台北男士按摩的常見服務項目、價格比較方式、評價參考重點，幫助你做出適合自己的選擇。
-      </p>
-    </section>
+    <!-- Content -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <div class="prose-custom text-stone-300 leading-relaxed space-y-6" itemprop="articleBody">
 
-    <!-- H2: 為什麼男士會選擇按摩服務 -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        為什麼男士會選擇按摩服務？
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        現代上班族長時間坐在電腦前，肩頸和背部容易出現緊繃不適的情況。對於許多男士來說，按摩已成為日常保養的一部分。以下是常見的選擇按摩服務的原因：
-      </p>
-      <ul class="space-y-3 text-stone-700 leading-relaxed">
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">1</span>
-          <span><strong>長時間久坐</strong>：辦公室工作者每天坐在椅子上超過八小時，肩頸與背部肌肉容易緊繃。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">2</span>
-          <span><strong>長時間開車</strong>：職業駕駛或經常開車通勤者，腰部與肩頸部位容易累積疲勞。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">3</span>
-          <span><strong>運動後肌肉緊繃</strong>：運動愛好者在高強度訓練後，需要適當的肌肉按摩來幫助恢復。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">4</span>
-          <span><strong>工作型態造成身體疲勞</strong>：體力工作者或輪班制度工作者，身體容易累積疲勞感。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">5</span>
-          <span><strong>固定安排身體保養</strong>：將按摩視為定期保養，類似運動或健康檢查的習慣。</span>
-        </li>
-      </ul>
-    </section>
+        <!-- 首段 -->
+        <p class="text-lg text-stone-200">
+          在台北想找按摩服務的男性朋友，面對眾多選項時往往不知從何下手。<strong class="text-gold-300">台北男士按摩推薦</strong>該怎麼看？本文從服務項目、價格比較、評價判讀到挑選標準，提供一套實用的判斷方法，幫助你找到合適的正規按摩服務。
+        </p>
 
-    <!-- H2: 台北男士按摩推薦常見服務項目 -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        台北男士按摩推薦常見服務項目
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        了解不同按摩服務項目的內容，是選擇適合服務的第一步。以下是台北地區男士按摩常見的服務項目：
-      </p>
+        <!-- H2: 為什麼 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">為什麼男士會選擇按摩服務？</h2>
 
-      <div class="overflow-x-auto mb-6">
-        <table class="w-full border-collapse border border-stone-300 rounded-lg overflow-hidden">
-          <thead>
-            <tr class="bg-stone-800 text-white">
-              <th class="px-4 py-3 text-left font-semibold">服務項目</th>
-              <th class="px-4 py-3 text-left font-semibold">適合對象</th>
-              <th class="px-4 py-3 text-left font-semibold">說明</th>
-            </tr>
-          </thead>
-          <tbody class="text-stone-700">
-            <tr class="border-b border-stone-200 hover:bg-stone-50">
-              <td class="px-4 py-3 font-medium">肩頸按摩</td>
-              <td class="px-4 py-3">上班族、長時間用電腦者</td>
-              <td class="px-4 py-3">針對肩頸部位進行按摩，時間約30-60分鐘</td>
-            </tr>
-            <tr class="border-b border-stone-200 hover:bg-stone-50">
-              <td class="px-4 py-3 font-medium">背部按摩</td>
-              <td class="px-4 py-3">背部肌肉緊繃者</td>
-              <td class="px-4 py-3">以背部為主，涵蓋上背與下背區域</td>
-            </tr>
-            <tr class="border-b border-stone-200 hover:bg-stone-50">
-              <td class="px-4 py-3 font-medium">全身肌肉按摩</td>
-              <td class="px-4 py-3">希望完整按摩者</td>
-              <td class="px-4 py-3">涵蓋肩頸、背部、腿部等部位</td>
-            </tr>
-            <tr class="border-b border-stone-200 hover:bg-stone-50">
-              <td class="px-4 py-3 font-medium">運動後肌肉按摩</td>
-              <td class="px-4 py-3">運動愛好者、健身者</td>
-              <td class="px-4 py-3">針對運動後的肌肉狀態進行按摩</td>
-            </tr>
-            <tr class="border-b border-stone-200 hover:bg-stone-50">
-              <td class="px-4 py-3 font-medium">久坐族肩背按摩</td>
-              <td class="px-4 py-3">辦公室久坐工作者</td>
-              <td class="px-4 py-3">專注於肩頸與背部，針對久坐造成的不適</td>
-            </tr>
-            <tr class="border-b border-stone-200 hover:bg-stone-50">
-              <td class="px-4 py-3 font-medium">到府按摩服務</td>
-              <td class="px-4 py-3">時間安排較緊者</td>
-              <td class="px-4 py-3">按摩師到指定地點提供服務</td>
-            </tr>
-            <tr class="hover:bg-stone-50">
-              <td class="px-4 py-3 font-medium">門市按摩服務</td>
-              <td class="px-4 py-3">喜歡固定環境者</td>
-              <td class="px-4 py-3">在門市空間進行，設備與環境較固定</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <p>許多男性因為工作性質需要長時間坐在辦公桌前，或是長時間開車通勤，肩頸與背部肌肉長時間維持固定姿勢，容易出現緊繃不適。此外，經常運動的人也可能因為訓練強度較高，出現肌肉緊繃的情況。這些身體狀況讓許多男性開始關注按摩服務，將其視為日常身體保養的一環。</p>
 
-      <p class="text-stone-700 leading-relaxed">
-        選擇服務項目時，建議根據自己的身體狀況和需求來決定。如果是第一次體驗，可以從較基礎的肩頸按摩開始，再逐步嘗試其他項目。
-      </p>
-    </section>
+        <p>透過專業的按摩手法，可以針對緊繃的肌群進行處理，讓身體狀態回復到較為舒服的感覺。這也是為什麼越來越多男性願意花時間與預算來安排按摩服務的原因。</p>
 
-    <!-- H2: 台北男士按摩服務流程怎麼安排 -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        台北男士按摩服務流程怎麼安排？
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        正規的按摩服務通常會有以下流程，讓顧客清楚知道每個步驟：
-      </p>
-      <ol class="space-y-3 text-stone-700 leading-relaxed">
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-stone-700 text-white rounded-full text-sm flex-shrink-0 mt-0.5">1</span>
-          <span><strong>線上或電話預約</strong>：透過官方網站或電話聯繫，選擇方便的時間。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-stone-700 text-white rounded-full text-sm flex-shrink-0 mt-0.5">2</span>
-          <span><strong>確認服務項目</strong>：告知想預約的按摩項目，確認服務內容與時間長度。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-stone-700 text-white rounded-full text-sm flex-shrink-0 mt-0.5">3</span>
-          <span><strong>確認時間與地點</strong>：預約到府服務需確認地址與交通範圍；門市服務則確認店點位置。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-stone-700 text-white rounded-full text-sm flex-shrink-0 mt-0.5">4</span>
-          <span><strong>服務前溝通身體狀況</strong>：按摩前簡單說明身體狀況，例如哪些部位較緊繃或需要特別注意的地方。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-stone-700 text-white rounded-full text-sm flex-shrink-0 mt-0.5">5</span>
-          <span><strong>服務後保養建議</strong>：按摩結束後，按摩師可能會提供日常保養建議，例如適度伸展或注意姿勢。</span>
-        </li>
-      </ol>
-    </section>
+        <!-- H2: 服務項目 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">台北男士按摩推薦常見服務項目</h2>
 
-    <!-- H2: 台北男士按摩價格通常怎麼看 -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        台北男士按摩價格通常怎麼看？
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        <strong>台北男士按摩價格比較</strong>時，可以從以下幾個因素來了解價格差異：
-      </p>
+        <p>在選擇按摩服務前，先了解常見的服務項目內容，有助於找到符合自身需求的方案。以下是男性較常選擇的按摩項目：</p>
 
-      <div class="grid md:grid-cols-2 gap-4 mb-6">
-        <div class="bg-stone-50 p-5 rounded-xl border border-stone-200">
-          <h3 class="font-semibold text-stone-800 mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            服務時間
-          </h3>
-          <p class="text-stone-600 text-sm">按摩時間長度是影響價格的主要因素，通常30分鐘、60分鐘、90分鐘的價格會有明顯差異。</p>
+        <ul class="space-y-2 text-stone-300">
+          <li><strong class="text-stone-100">肩頸按摩</strong>：針對肩頸部位的肌肉緊繃，透過手法按摩緩解長時間使用電腦或開車造成的不適。</li>
+          <li><strong class="text-stone-100">背部按摩</strong>：針對背部大範圍肌群，適合久坐或需要久站工作的人。</li>
+          <li><strong class="text-stone-100">全身肌肉按摩</strong>：涵蓋多個肌群，針對身體整體的肌肉狀態進行按摩處理。</li>
+          <li><strong class="text-stone-100">運動後肌肉按摩</strong>：針對運動後較緊繃的特定肌群，幫助身體從運動狀態恢復。</li>
+          <li><strong class="text-stone-100">久坐族肩背按摩</strong>：聚焦肩背區域，適合長時間辦公的上班族。</li>
+        </ul>
+
+        <!-- 圖片1 (40%位置) -->
+        <div class="my-8 rounded-2xl overflow-hidden">
+          <img src="../../images/blog-shoulder-massage-2.jpg" alt="肩頸按摩示意" class="w-full h-64 object-cover" loading="lazy" />
         </div>
-        <div class="bg-stone-50 p-5 rounded-xl border border-stone-200">
-          <h3 class="font-semibold text-stone-800 mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-            </svg>
-            服務項目
-          </h3>
-          <p class="text-stone-600 text-sm">不同按摩項目的價格不同，全身肌肉按摩通常比單一部位按摩價格較高。</p>
+
+        <!-- H2: 服務流程 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">台北男士按摩服務流程怎麼安排？</h2>
+
+        <p>正規按摩服務通常會有標準化的流程，從預約到服務結束都有明確的步驟：</p>
+
+        <ol class="space-y-3 text-stone-300">
+          <li><strong class="text-stone-100">線上或電話預約</strong>：透過官網預約表單、電話或官方通訊軟體聯繫服務方，說明需求與時間。</li>
+          <li><strong class="text-stone-100">確認服務項目</strong>：與服務方確認按摩項目種類、時間長度與相關費用。</li>
+          <li><strong class="text-stone-100">確認時間與地點</strong>：門市按摩需確認地址與時段；到府按摩則需確認上門地址與時間。</li>
+          <li><strong class="text-stone-100">服務前簡單溝通</strong>：按摩開始前，按摩師會簡單詢問身體狀況與不適部位。</li>
+          <li><strong class="text-stone-100">服務後保養建議</strong>：按摩結束後，可能會獲得日常保養的建議，例如適當休息與日常伸展。</li>
+        </ol>
+
+        <!-- H2: 價格 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">台北男士按摩價格通常怎麼看？</h2>
+
+        <p>按摩價格會因多項因素而有所不同，了解價格的計算方式有助於做出合理的預算安排：</p>
+
+        <ul class="space-y-2 text-stone-300">
+          <li><strong class="text-stone-100">服務時間</strong>：常見的按摩時間為 60 分鐘、90 分鐘與 120 分鐘，時間越長費用越高。</li>
+          <li><strong class="text-stone-100">服務項目</strong>：全身按摩的價格通常高於單一部位的按摩。</li>
+          <li><strong class="text-stone-100">到府或門市</strong>：到府按摩可能額外收取交通費，門市則無此費用。</li>
+          <li><strong class="text-stone-100">交通距離</strong>：到府服務的距離可能影響額外費用的多寡。</li>
+          <li><strong class="text-stone-100">是否提前預約</strong>：提前預約通常能取得較理想的時段，臨時預約可能有額外費用或無法安排。</li>
+        </ul>
+
+        <p>價格透明是選擇正規按摩服務的重要參考指標，消費者應在預約前確認清楚。</p>
+
+        <!-- 圖片2 (70%位置) -->
+        <div class="my-8 rounded-2xl overflow-hidden">
+          <img src="../../images/blog-massage-space-2.jpg" alt="按摩服務空間" class="w-full h-64 object-cover" loading="lazy" />
         </div>
-        <div class="bg-stone-50 p-5 rounded-xl border border-stone-200">
-          <h3 class="font-semibold text-stone-800 mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-            到府或門市
-          </h3>
-          <p class="text-stone-600 text-sm">到府按摩可能會包含交通費用，門市按摩則通常有固定價格。</p>
+
+        <!-- H2: 推薦怎麼選 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">台北男士按摩推薦怎麼選？</h2>
+
+        <p>面對眾多按摩服務選項，可以參考以下標準來判斷是否值得推薦：</p>
+
+        <div class="card-glass overflow-hidden my-8">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-stone-700">
+                <th class="text-left p-4 text-gold-300 font-medium">挑選標準</th>
+                <th class="text-left p-4 text-gold-300 font-medium">說明</th>
+              </tr>
+            </thead>
+            <tbody class="text-stone-300">
+              <tr class="border-b border-stone-800">
+                <td class="p-4 font-medium text-stone-200">服務項目清楚</td>
+                <td class="p-4">官網或預約時能清楚了解按摩項目的內容</td>
+              </tr>
+              <tr class="border-b border-stone-800">
+                <td class="p-4 font-medium text-stone-200">價格明確</td>
+                <td class="p-4">在預約前就能取得完整價格資訊，無隱藏費用</td>
+              </tr>
+              <tr class="border-b border-stone-800">
+                <td class="p-4 font-medium text-stone-200">預約方式正常</td>
+                <td class="p-4">提供電話、網站或官方通訊軟體等正常預約管道</td>
+              </tr>
+              <tr class="border-b border-stone-800">
+                <td class="p-4 font-medium text-stone-200">服務說明公開</td>
+                <td class="p-4">流程、注意事項等資訊公開透明</td>
+              </tr>
+              <tr class="border-b border-stone-800">
+                <td class="p-4 font-medium text-stone-200">評價合理</td>
+                <td class="p-4">有真實消費者的評價可供參考</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-stone-200">網站資訊清楚</td>
+                <td class="p-4">有完整的官網，包含服務、價格與聯絡方式</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="bg-stone-50 p-5 rounded-xl border border-stone-200">
-          <h3 class="font-semibold text-stone-800 mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            價格透明
-          </h3>
-          <p class="text-stone-600 text-sm">正規業者會在官網或預約時明確告知價格，不會有隱藏費用。</p>
+
+        <!-- H2: 到府與門市 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">到府按摩與門市按摩有什麼差別？</h2>
+
+        <p>到府按摩與門市按摩各有適合的情境。到府按摩可以節省交通時間，對於工作安排較緊、不方便出門的人來說較為方便。門市按摩則有固定的環境與較標準化的流程，設備與空間通常也較為完善。消費者可以依照自己的時間安排、所在地點與預算來選擇適合的方式。</p>
+
+        <!-- H2: 注意事項 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">預約前需要注意哪些事項？</h2>
+
+        <p>在預約按摩服務之前，建議先確認以下幾點，以確保服務順利進行：</p>
+
+        <ul class="space-y-2 text-stone-300">
+          <li><strong class="text-stone-100">確認服務項目</strong>：了解自己預約的按摩內容，避免與預期不符。</li>
+          <li><strong class="text-stone-100">確認價格</strong>：在預約時就確認總費用，包含是否有額外費用。</li>
+          <li><strong class="text-stone-100">確認服務時間</strong>：確認按摩師的服務時段與預約時間。</li>
+          <li><strong class="text-stone-100">確認到府範圍</strong>：若選擇到府服務，需確認地址是否在服務範圍內。</li>
+          <li><strong class="text-stone-100">避免臨時更改</strong>：臨時更改可能影響服務安排，建議提前通知。</li>
+          <li><strong class="text-stone-100">告知身體狀況</strong>：若有特殊身體狀況，應在預約時先告知服務方。</li>
+        </ul>
+
+        <!-- H2: 結語 -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">結語：選擇正規、清楚、透明的按摩服務</h2>
+
+        <p>選擇<strong class="text-gold-300">台北男士按摩推薦</strong>時，關鍵在於確認服務項目清楚、價格透明、流程正規。透過了解服務內容、比較價格、參考評價，可以幫助自己找到合適的按摩服務。</p>
+
+        <p>金手指按摩在官網清楚列出所有服務項目、價格與預約方式，讓每位客戶在預約前就能充分了解服務內容。若你正在尋找正規的台北男士按摩服務，歡迎參考我們的網站資訊，選擇適合你的按摩項目。</p>
+
+        <!-- FAQ -->
+        <h2 class="text-2xl md:text-3xl font-bold text-stone-200 mb-4 mt-10">常見問題</h2>
+
+        <div class="space-y-3">
+          <details class="card-glass group" name="faq">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+              <span class="text-stone-200 font-medium text-left flex-1 pr-4">台北男士按摩推薦怎麼選？</span>
+              <svg class="text-gold-500 flex-shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-stone-400 text-sm leading-relaxed">
+              選擇時可以參考服務項目是否清楚、價格是否透明、是否有正常預約管道、網站資訊是否完整，以及其他消費者的評價。這些指標有助於判斷服務是否正規。
+            </div>
+          </details>
+
+          <details class="card-glass group" name="faq">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+              <span class="text-stone-200 font-medium text-left flex-1 pr-4">台北男士按摩價格怎麼看？</span>
+              <svg class="text-gold-500 flex-shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-stone-400 text-sm leading-relaxed">
+              價格會根據服務時間、項目種類、到府或門市等因素而異。建議在預約前確認清楚總價格，並了解是否有額外的交通費或服務費。
+            </div>
+          </details>
+
+          <details class="card-glass group" name="faq">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+              <span class="text-stone-200 font-medium text-left flex-1 pr-4">台北男士按摩評價怎麼看？</span>
+              <svg class="text-gold-500 flex-shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-stone-400 text-sm leading-relaxed">
+              可以透過 Google 評論、相關論壇或社群平台了解其他消費者的真實回饋。注意觀察評價的內容是否具體，以及服務方是否有針對負評做出回應。
+            </div>
+          </details>
+
+          <details class="card-glass group" name="faq">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+              <span class="text-stone-200 font-medium text-left flex-1 pr-4">到府按摩和門市按摩有什麼差別？</span>
+              <svg class="text-gold-500 flex-shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-stone-400 text-sm leading-relaxed">
+              到府按摩節省交通時間，適合不便出門的人；門市按摩環境固定、流程標準化。可依個人時間、地點與預算選擇。
+            </div>
+          </details>
+
+          <details class="card-glass group" name="faq">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+              <span class="text-stone-200 font-medium text-left flex-1 pr-4">運動後可以安排按摩嗎？</span>
+              <svg class="text-gold-500 flex-shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-stone-400 text-sm leading-relaxed">
+              可以。運動後進行肌肉按摩有助於緩解肌肉緊繃。建議選擇運動後肌肉按摩項目，並在按摩前告知按摩師剛完成的運動類型。
+            </div>
+          </details>
         </div>
-      </div>
 
-      <p class="text-stone-700 leading-relaxed">
-        建議在預約前先確認價格是否包含所有費用，避免產生誤會。正規的按摩服務業者會在網站或預約時清楚說明價格內容。
-      </p>
-    </section>
-
-    <!-- H2: 台北男士按摩推薦怎麼選 -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        台北男士按摩推薦怎麼選？
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        <strong>台北男士按摩推薦怎麼選</strong>？以下是幾個判斷正規按摩服務的參考標準：
-      </p>
-      <ul class="space-y-3 text-stone-700 leading-relaxed">
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span><strong>是否有清楚服務項目</strong>：官網或預約管道是否清楚列出各項服務內容。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span><strong>是否有明確價格</strong>：價格是否公開透明，是否有額外費用說明。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span><strong>是否有正常預約方式</strong>：是否有固定的預約管道，如網站預約或電話預約。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span><strong>是否有公開服務說明</strong>：服務流程、注意事項是否有清楚說明。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span><strong>是否有合理評價</strong>：<strong>台北男士按摩評價</strong>是否來自真實顧客，評價內容是否合理。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span><strong>網站資訊是否清楚</strong>：官方網站是否有完整的公司資訊與聯絡方式。</span>
-        </li>
-      </ul>
-    </section>
-
-    <!-- H2: 到府按摩與門市按摩有什麼差別 -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        到府按摩與門市按摩有什麼差別？
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        選擇按摩服務時，需要決定要到門市還是預約到府服務。兩種方式各有特點：
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-amber-50 p-6 rounded-xl border border-amber-200">
-          <h3 class="font-bold text-stone-800 mb-3 text-lg flex items-center gap-2">
-            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-            </svg>
-            到府按摩
-          </h3>
-          <ul class="space-y-2 text-stone-700 text-sm">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-1">&#8226;</span>
-              <span>節省交通時間，不用出門</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-1">&#8226;</span>
-              <span>適合時間安排較緊者</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-1">&#8226;</span>
-              <span>在自己熟悉的環境中接受服務</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-1">&#8226;</span>
-              <span>需確認到府服務的範圍與交通費用</span>
-            </li>
-          </ul>
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mt-10 pt-6 border-t border-stone-800/50">
+          <span class="text-stone-500 text-sm">標籤：</span>
+          {['台北男士按摩推薦', '按摩推薦怎麼選', '按摩服務項目', '按摩價格比較', '按摩評價'].map(tag => (
+            <span class="px-3 py-1 bg-stone-800 text-stone-400 text-xs rounded-full">{tag}</span>
+          ))}
         </div>
-        <div class="bg-stone-50 p-6 rounded-xl border border-stone-200">
-          <h3 class="font-bold text-stone-800 mb-3 text-lg flex items-center gap-2">
-            <svg class="w-6 h-6 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-            </svg>
-            門市按摩
-          </h3>
-          <ul class="space-y-2 text-stone-700 text-sm">
-            <li class="flex items-start gap-2">
-              <span class="text-stone-500 mt-1">&#8226;</span>
-              <span>環境固定，設備較齊全</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-stone-500 mt-1">&#8226;</span>
-              <span>服務流程較標準化</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-stone-500 mt-1">&#8226;</span>
-              <span>不用準備按摩空間</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-stone-500 mt-1">&#8226;</span>
-              <span>需安排交通時間</span>
-            </li>
-          </ul>
-        </div>
+
       </div>
-
-      <p class="text-stone-700 leading-relaxed">
-        使用者可以根據自己的時間、地點與預算來選擇適合的服務方式。無論選擇哪種方式，都應該確認服務內容與價格後再預約。
-      </p>
-    </section>
-
-    <!-- H2: 預約前需要注意哪些事項 -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        預約前需要注意哪些事項？
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        為了讓按摩服務順利進行，預約前建議確認以下事項：
-      </p>
-      <ul class="space-y-3 text-stone-700 leading-relaxed">
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">1</span>
-          <span><strong>確認服務項目</strong>：了解自己預約的是哪一種按摩服務，是否符合自己的需求。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">2</span>
-          <span><strong>確認價格</strong>：確認總費用包含哪些項目，是否有額外費用。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">3</span>
-          <span><strong>確認服務時間</strong>：確認按摩時間長度，以及預約的開始時間。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">4</span>
-          <span><strong>確認到府範圍</strong>：如果預約到府服務，需確認該地區是否在服務範圍內。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">5</span>
-          <span><strong>避免臨時更改</strong>：盡量在預約時間前確認，如需更改應提前告知。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="inline-flex items-center justify-center w-6 h-6 bg-amber-500 text-white rounded-full text-sm flex-shrink-0 mt-0.5">6</span>
-          <span><strong>告知身體狀況</strong>：有特殊身體狀況應在預約時先告知，讓按摩師能適當調整服務方式。</span>
-        </li>
-      </ul>
-    </section>
-
-    <!-- H2: 結語 -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold text-stone-800 mb-4 pb-2 border-b-2 border-amber-400">
-        結語：選擇正規、清楚、透明的按摩服務
-      </h2>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        選擇按摩服務時，最重要的是找到一家<strong>服務項目清楚、價格透明、預約方式正常</strong>的業者。<strong>台北男士按摩推薦</strong>的選擇很多，建議在預約前多花時間了解服務內容，確認是否符合自己的需求。
-      </p>
-      <p class="text-stone-700 leading-relaxed mb-4">
-        金手指按摩提供台北地區正規按摩服務，包括肩頸按摩、背部按摩、全身肌肉按摩等項目，並提供到府與門市兩種服務方式。所有服務項目與價格均在官網公開，歡迎透過官網或電話預約諮詢。
-      </p>
-      <p class="text-stone-700 leading-relaxed">
-        無論你是因為長時間久坐、運動後肌肉緊繃，或是想固定安排身體保養，選擇適合自己的按摩服務，都是對身體健康的一種投資。希望這篇文章能幫助你找到適合的台北男士按摩服務。
-      </p>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="mb-12 bg-stone-800 rounded-2xl p-8 text-center">
-      <h3 class="text-xl font-bold text-white mb-3">想預約台北男士按摩服務？</h3>
-      <p class="text-stone-300 mb-6">金手指按摩提供專業、正規的按摩服務，歡迎預約諮詢</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a 
-          href="/contact" 
-          class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-full transition-colors"
-        >
-          立即預約
-        </a>
-        <a 
-          href="/services" 
-          class="inline-block bg-transparent border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white font-semibold px-8 py-3 rounded-full transition-colors"
-        >
-          了解服務項目
-        </a>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold text-stone-800 mb-6 pb-2 border-b-2 border-amber-400">
-        常見問題（FAQ）
-      </h2>
-      <div class="space-y-4">
-        <details class="group bg-stone-50 rounded-xl border border-stone-200 overflow-hidden">
-          <summary class="px-6 py-4 cursor-pointer font-semibold text-stone-800 flex items-center justify-between hover:bg-stone-100 transition-colors">
-            <span>台北男士按摩推薦怎麼選才不會踩雷？</span>
-            <svg class="w-5 h-5 text-stone-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-4 text-stone-700 leading-relaxed">
-            選擇時可以確認業者是否有清楚公開服務項目與價格、是否有正常預約管道、網站資訊是否完整。建議選擇資訊透明的業者，並在預約前確認所有細節。
-          </div>
-        </details>
-
-        <details class="group bg-stone-50 rounded-xl border border-stone-200 overflow-hidden">
-          <summary class="px-6 py-4 cursor-pointer font-semibold text-stone-800 flex items-center justify-between hover:bg-stone-100 transition-colors">
-            <span>台北男士按摩價格大約是多少？</span>
-            <svg class="w-5 h-5 text-stone-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-4 text-stone-700 leading-relaxed">
-            價格會因服務時間、項目與地點而有所不同。一般來說，單一部位按摩（如肩頸或背部）價格較低，全身肌肉按摩或較長時間的服務價格會較高。到府服務可能會有額外交通費用。建議直接諮詢業者了解詳細價格。
-          </div>
-        </details>
-
-        <details class="group bg-stone-50 rounded-xl border border-stone-200 overflow-hidden">
-          <summary class="px-6 py-4 cursor-pointer font-semibold text-stone-800 flex items-center justify-between hover:bg-stone-100 transition-colors">
-            <span>第一次預約按摩需要注意什麼？</span>
-            <svg class="w-5 h-5 text-stone-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-4 text-stone-700 leading-relaxed">
-            第一次預約建議先選擇較基礎的項目，如肩頸按摩或背部按摩。預約時確認服務內容、時間長度與價格，並在服務前告知按摩師自己的身體狀況與需求。如果有任何不適，應立即告知按摩師。
-          </div>
-        </details>
-
-        <details class="group bg-stone-50 rounded-xl border border-stone-200 overflow-hidden">
-          <summary class="px-6 py-4 cursor-pointer font-semibold text-stone-800 flex items-center justify-between hover:bg-stone-100 transition-colors">
-            <span>到府按摩與門市按摩哪個比較好？</span>
-            <svg class="w-5 h-5 text-stone-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-4 text-stone-700 leading-relaxed">
-            兩者各有優點。到府按摩適合時間較緊、不想花時間交通的人；門市按摩則有固定環境與較標準化的流程。可以根據自己的時間安排、地點與預算來選擇。部分人會交替使用兩種方式。
-          </div>
-        </details>
-
-        <details class="group bg-stone-50 rounded-xl border border-stone-200 overflow-hidden">
-          <summary class="px-6 py-4 cursor-pointer font-semibold text-stone-800 flex items-center justify-between hover:bg-stone-100 transition-colors">
-            <span>多久做一次按摩比較適合？</span>
-            <svg class="w-5 h-5 text-stone-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-4 text-stone-700 leading-relaxed">
-            頻率因人而異。一般建議每兩週到一個月做一次按摩，作為日常保養的一部分。如果工作型態較勞累或運動量較大，可以考慮每週一次。建議根據自己的身體狀況與預算來調整頻率。
-          </div>
-        </details>
-
-        <details class="group bg-stone-50 rounded-xl border border-stone-200 overflow-hidden">
-          <summary class="px-6 py-4 cursor-pointer font-semibold text-stone-800 flex items-center justify-between hover:bg-stone-100 transition-colors">
-            <span>按摩前後有什麼需要注意的？</span>
-            <svg class="w-5 h-5 text-stone-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-4 text-stone-700 leading-relaxed">
-            按摩前建議避免過飽或空腹，穿著舒適的衣物。按摩後建議多喝水，適當休息，避免立即進行劇烈運動。按摩師通常會在服務後提供日常保養建議，可以參考執行。
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <!-- Related Articles -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold text-stone-800 mb-6 pb-2 border-b-2 border-amber-400">
-        相關文章推薦
-      </h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <a href="/blog/massage-service-flow" class="block bg-stone-50 p-5 rounded-xl border border-stone-200 hover:border-amber-400 hover:shadow-md transition-all">
-          <h3 class="font-semibold text-stone-800 mb-2">按摩服務流程介紹</h3>
-          <p class="text-stone-500 text-sm">了解正規按摩服務的完整流程與注意事項</p>
-        </a>
-        <a href="/blog/massage-price-guide" class="block bg-stone-50 p-5 rounded-xl border border-stone-200 hover:border-amber-400 hover:shadow-md transition-all">
-          <h3 class="font-semibold text-stone-800 mb-2">按摩價格指南</h3>
-          <p class="text-stone-500 text-sm">台北按摩價格比較與選擇建議</p>
-        </a>
-        <a href="/blog/home-vs-store-massage" class="block bg-stone-50 p-5 rounded-xl border border-stone-200 hover:border-amber-400 hover:shadow-md transition-all">
-          <h3 class="font-semibold text-stone-800 mb-2">到府按摩 vs 門市按摩</h3>
-          <p class="text-stone-500 text-sm">兩種按摩方式的優缺點比較</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Self-Check Result -->
-    <section class="mb-10 bg-green-50 border border-green-200 rounded-xl p-6">
-      <h3 class="text-lg font-bold text-green-800 mb-3 flex items-center gap-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        文章自檢結果
-      </h3>
-      <ul class="space-y-2 text-green-800 text-sm">
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>高危詞檢查：未使用「男士舒壓」「男士紓壓」「私人空間」「飯店按摩」「女技師到府」「美女按摩師」「特殊服務」等高危詞彙</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>隱性高危詞檢查：未使用「貼身」「親密」「隨叫隨到」「夜間」「凌晨」「深夜」「私下」「保密」等隱性高危詞彙</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>全身規則檢查：使用「全身肌肉按摩」「肩頸與背部按摩」「運動後肌肉按摩」「久坐族肩背按摩」，未使用「全身服務」「全身體驗」「全身放鬆」「全身享受」</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>醫療禁用詞檢查：未使用「最」「第一」「保證」「100%」「完全」「療效」「治癒」「治療」「醫學級」等醫療禁用詞彙</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>語氣檢查：全篇使用正規服務業官網語氣，語調自然、專業、乾淨</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>關鍵字佈局：主關鍵字「台北男士按摩推薦」自然分佈於標題、首段、H2標題與內文中；副關鍵字「台北男士按摩推薦怎麼選」「台北男士按摩服務項目」「台北男士按摩價格比較」「台北男士按摩評價」均已使用</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>結構檢查：包含H1、7個H2段落、表格、FAQ（6題）、CTA區塊、相關文章推薦與自檢結果</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>字數檢查：正文約1,500字，符合1,200-1,800字要求</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>語言檢查：全篇使用台灣繁體中文</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600 mt-0.5">&#10003;</span>
-          <span>格式檢查：輸出為完整Astro .astro組件文件，可直接使用</span>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "台北男士按摩推薦｜正規按摩服務介紹與選擇重點",
-      "description": description,
-      "author": {
-        "@type": "Organization",
-        "name": author
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "金手指按摩",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://goldfinger.com.tw/logo.png"
-        }
-      },
-      "datePublished": date,
-      "dateModified": date,
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": `https://goldfinger.com.tw/blog/${slug}`
-      },
-      "keywords": keywords
-    })} />
-
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "台北男士按摩推薦怎麼選才不會踩雷？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "選擇時可以確認業者是否有清楚公開服務項目與價格、是否有正常預約管道、網站資訊是否完整。建議選擇資訊透明的業者，並在預約前確認所有細節。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "台北男士按摩價格大約是多少？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "價格會因服務時間、項目與地點而有所不同。一般來說，單一部位按摩（如肩頸或背部）價格較低，全身肌肉按摩或較長時間的服務價格會較高。到府服務可能會有額外交通費用。建議直接諮詢業者了解詳細價格。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "第一次預約按摩需要注意什麼？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "第一次預約建議先選擇較基礎的項目，如肩頸按摩或背部按摩。預約時確認服務內容、時間長度與價格，並在服務前告知按摩師自己的身體狀況與需求。如果有任何不適，應立即告知按摩師。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "到府按摩與門市按摩哪個比較好？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "兩者各有優點。到府按摩適合時間較緊、不想花時間交通的人；門市按摩則有固定環境與較標準化的流程。可以根據自己的時間安排、地點與預算來選擇。部分人會交替使用兩種方式。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "多久做一次按摩比較適合？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "頻率因人而異。一般建議每兩週到一個月做一次按摩，作為日常保養的一部分。如果工作型態較勞累或運動量較大，可以考慮每週一次。建議根據自己的身體狀況與預算來調整頻率。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "按摩前後有什麼需要注意的？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "按摩前建議避免過飽或空腹，穿著舒適的衣物。按摩後建議多喝水，適當休息，避免立即進行劇烈運動。按摩師通常會在服務後提供日常保養建議，可以參考執行。"
-          }
-        }
-      ]
-    })} />
+    </div>
   </article>
+
   <Footer />
 </Layout>
