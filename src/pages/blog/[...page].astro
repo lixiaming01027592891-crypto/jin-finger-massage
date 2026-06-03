@@ -1,0 +1,179 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 9;
+  const allPosts = await getCollection('blog');
+  const sorted = allPosts.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+
+  const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+
+  return Array.from({ length: totalPages }, (_, i) => {
+    const pageNum = i + 1;
+    const start = i * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+
+    return {
+      // 第 1 頁: params.page = undefined → URL = /blog
+      // 第 2 頁起: params.page = "2", "3"... → URL = /blog/2, /blog/3
+      params: { page: pageNum === 1 ? undefined : String(pageNum) },
+      props: {
+        posts: sorted.slice(start, end),
+        currentPage: pageNum,
+        lastPage: totalPages,
+        totalPosts: sorted.length,
+      },
+    };
+  });
+}
+
+const { posts, currentPage, lastPage, totalPosts } = Astro.props;
+const hasPrev = currentPage > 1;
+const hasNext = currentPage < lastPage;
+const prevUrl = currentPage === 2 ? '/blog' : `/blog/${currentPage - 1}`;
+const nextUrl = `/blog/${currentPage + 1}`;
+
+const title = currentPage === 1
+  ? '部落格｜金手指按摩 - 台北男士按摩知識與服務介紹'
+  : `部落格第 ${currentPage} 頁｜金手指按摩`;
+const description = '金手指按摩部落格分享台北男士按摩服務介紹、到府按摩流程、價格說明與挑選標準，幫助你找到正規、透明的按摩服務。';
+const keywords = '台北男士按摩,台北男士到府按摩,按摩服務介紹,按摩預約流程,按摩價格';
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/blog">
+  <Navbar />
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-12 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 to-stone-950"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-gold-500 text-sm tracking-widest uppercase">Blog</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-gold-300 mt-2 mb-4">按摩知識部落格</h1>
+      <p class="text-stone-400 max-w-2xl mx-auto">
+        台北男士按摩服務介紹、流程說明與挑選指南
+        {lastPage > 1 && (
+          <span class="block mt-2 text-stone-500">第 {currentPage} / {lastPage} 頁，共 {totalPosts} 篇文章</span>
+        )}
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog List -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Post Grid -->
+      <div class="grid md:grid-cols-2 gap-8">
+        {posts.map(post => {
+          const ogImage = post.data.ogImage || '/images/og-image.jpg';
+          const date = post.data.date;
+          return (
+            <a href={`/blog/${post.id.replace('.md', '')}`} class="card-glass overflow-hidden group block hover:border-gold-500/30 transition-all duration-500">
+              <div class="relative h-48 overflow-hidden">
+                <img
+                  src={ogImage}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3 text-xs text-stone-500">
+                  <span class="text-gold-400">{post.data.category}</span>
+                  <span>|</span>
+                  <span>{date}</span>
+                  <span>|</span>
+                  <span>閱讀時間 7 分鐘</span>
+                </div>
+                <h2 class="text-xl font-bold text-stone-100 mb-3 group-hover:text-gold-300 transition-colors leading-snug">
+                  {post.data.title.replace(' - 金手指按摩', '')}
+                </h2>
+                <p class="text-stone-400 text-sm leading-relaxed">{post.data.description}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <!-- Pagination -->
+      {lastPage > 1 && (
+        <nav class="flex items-center justify-center gap-2 mt-16" aria-label="分頁">
+          {hasPrev ? (
+            <a href={prevUrl} class="px-4 py-2 rounded-lg bg-stone-800 text-stone-400 border border-stone-700/50 hover:text-gold-300 hover:border-gold-500/30 transition-all">
+              ← 上一頁
+            </a>
+          ) : (
+            <span class="px-4 py-2 rounded-lg bg-stone-800/50 text-stone-600 border border-stone-800/30 cursor-not-allowed">
+              ← 上一頁
+            </span>
+          )}
+
+          <div class="flex items-center gap-1">
+            {Array.from({ length: lastPage }, (_, i) => i + 1).map(num => {
+              const isActive = num === currentPage;
+              const href = num === 1 ? '/blog' : `/blog/${num}`;
+              return isActive ? (
+                <span class="px-3 py-2 rounded-lg bg-gold-500 text-stone-950 font-bold text-sm min-w-[2.5rem] text-center">
+                  {num}
+                </span>
+              ) : (
+                <a href={href} class="px-3 py-2 rounded-lg bg-stone-800 text-stone-400 border border-stone-700/50 hover:text-gold-300 hover:border-gold-500/30 transition-all text-sm min-w-[2.5rem] text-center">
+                  {num}
+                </a>
+              );
+            })}
+          </div>
+
+          {hasNext ? (
+            <a href={nextUrl} class="px-4 py-2 rounded-lg bg-stone-800 text-stone-400 border border-stone-700/50 hover:text-gold-300 hover:border-gold-500/30 transition-all">
+              下一頁 →
+            </a>
+          ) : (
+            <span class="px-4 py-2 rounded-lg bg-stone-800/50 text-stone-600 border border-stone-800/30 cursor-not-allowed">
+              下一頁 →
+            </span>
+          )}
+        </nav>
+      )}
+
+      <!-- Schema: Blog -->
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "金手指按摩部落格",
+        "description": description,
+        "url": "https://goldenfingermassage.com/blog",
+        "publisher": { "@type": "Organization", "name": "金手指按摩" },
+        "blogPost": posts.map(p => ({
+          "@type": "BlogPosting",
+          "headline": p.data.title,
+          "description": p.data.description,
+          "url": `https://goldenfingermassage.com/blog/${p.id.replace('.md', '')}`,
+          "datePublished": p.data.date,
+          "image": `https://goldenfingermassage.com${p.data.ogImage || '/images/og-image.jpg'}`,
+          "author": { "@type": "Organization", "name": "金手指按摩" }
+        }))
+      })} />
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-stone-900/50 border-t border-stone-800/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-gold-300 mb-4">想親身體驗？</h2>
+      <p class="text-stone-400 mb-8">閱讀完知識，不如親自感受專業按摩的手藝。24小時營業，隨時歡迎。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/services" class="btn-primary flex items-center justify-center gap-2">查看服務項目</a>
+        <a href="/contact" class="btn-outline">聯絡我們</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
