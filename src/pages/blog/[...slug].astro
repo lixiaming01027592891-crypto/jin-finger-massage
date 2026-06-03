@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace('.md', '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, description, keywords, date, category, ogImage, author } = post.data;
+const canonical = `/blog/${post.id.replace('.md', '')}`;
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical={canonical} ogImage={ogImage}>
+  <Navbar />
+  <article itemscope itemtype="https://schema.org/BlogPosting">
+    <meta itemprop="headline" content={title} />
+    <meta itemprop="description" content={description} />
+    <meta itemprop="datePublished" content={date} />
+    <meta itemprop="author" content={author} />
+
+    <section class="pt-28 pb-8 relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 to-stone-950"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6 text-sm text-stone-500">
+          <a href="/blog" class="text-gold-400 hover:text-gold-300">部落格</a>
+          <span>/</span>
+          <span class="text-gold-400">{category}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gold-300 mb-4 leading-tight" itemprop="headline">
+          {title.replace(' - 金手指按摩', '')}
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-stone-500">
+          <span class="text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full">{category}</span>
+          <time itemprop="datePublished" datetime={date}>{date}</time>
+          <span>閱讀時間 7 分鐘</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-invert prose-stone max-w-none prose-headings:text-gold-300 prose-a:text-gold-400 hover:prose-a:text-gold-300 prose-strong:text-stone-200 prose-table:text-stone-300">
+          <Content />
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-stone-800/50">
+          <a href="/blog" class="text-gold-400 hover:text-gold-300 transition-colors inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            返回部落格
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description,
+      "url": `https://goldenfingermassage.com${canonical}`,
+      "datePublished": date,
+      "dateModified": date,
+      "author": { "@type": "Organization", "name": author },
+      "publisher": { "@type": "Organization", "name": "金手指按摩", "logo": { "@type": "ImageObject", "url": "https://goldenfingermassage.com/favicon.svg" } },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://goldenfingermassage.com${canonical}` },
+      "image": ogImage ? `https://goldenfingermassage.com${ogImage.replace('../../', '/')}` : undefined,
+    })} />
+  </article>
+  <Footer />
+</Layout>
