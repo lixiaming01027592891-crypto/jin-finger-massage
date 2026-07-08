@@ -15,7 +15,7 @@ const {
   canonical,
 } = Astro.props;
 
-const siteUrl = 'https://jin-finger-massage.com';
+const siteUrl = 'https://goldenfingermassage.com';
 const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
 ---
 
@@ -53,26 +53,19 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
     
-    <!-- Structured Data: LocalBusiness -->
+    {/* Structured Data: LocalBusiness.
+        TODO: 客戶提供真實資料後，於 schema 補回 telephone / streetAddress / postalCode / geo；請勿使用佔位值。 */}
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "HealthAndBeautyBusiness",
       "name": "金手指按摩",
       "description": description,
       "url": siteUrl,
-      "telephone": "+886-2-XXXX-XXXX",
       "image": `${siteUrl}${ogImage}`,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "XX路XX號",
         "addressLocality": "台北市",
-        "addressRegion": "台灣",
-        "postalCode": "100"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 25.033,
-        "longitude": 121.565
+        "addressCountry": "TW"
       },
       "openingHoursSpecification": [
         {
@@ -83,11 +76,11 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
         }
       ],
       "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "328"
-      }
+      "sameAs": [
+        "https://www.facebook.com/goldenfinger.massage",
+        "https://www.instagram.com/goldenfinger.massage",
+        "https://line.me/ti/p/~@goldenfinger"
+      ]
     })} />
     
     <!-- Structured Data: WebSite -->
@@ -95,12 +88,7 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "金手指按摩",
-      "url": siteUrl,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${siteUrl}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
+      "url": siteUrl
     })} />
 
     <style is:inline>

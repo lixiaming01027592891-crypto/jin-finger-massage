@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://jin-finger-massage.com/sitemap-index.xml
+Sitemap: https://goldenfingermassage.com/sitemap-index.xml

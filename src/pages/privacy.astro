@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = '隱私政策｜金手指按摩';
+const description = '金手指按摩隱私政策說明我們如何蒐集、使用與保護您在預約與聯繫過程中提供的個人資料。';
+const keywords = '隱私政策,個人資料保護,金手指按摩';
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/privacy">
+  <Navbar />
+
+  <section class="pt-32 pb-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-gold-500 text-sm tracking-widest uppercase">Privacy</span>
+        <h1 class="section-title mt-2">隱私政策</h1>
+        <p class="section-subtitle">我們重視並保護您的個人資料</p>
+      </div>
+
+      <div class="space-y-8 text-stone-300 leading-relaxed text-sm sm:text-base">
+        <p>金手指按摩（以下簡稱「本店」）依《個人資料保護法》蒐集、處理及利用您的個人資料。當您透過本網站、電話或 LINE 與我們預約或聯繫時，即表示您已閱讀並同意本政策。</p>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">一、蒐集的資料</h2>
+          <p>為提供預約與服務，我們可能蒐集您的姓名、聯絡電話、預約時間與服務需求。我們不會要求您提供非必要的敏感個人資料。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">二、資料利用目的</h2>
+          <p>所蒐集的資料僅用於預約安排、服務聯繫、客戶服務與必要的營運通知，不會用於前述目的以外之用途。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">三、資料保護與保存</h2>
+          <p>我們採取合理的技術與管理措施保護您的個人資料，防止未經授權的存取、竄改或洩漏。資料保存期間以達成蒐集目的之必要期間為限，逾期即予刪除。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">四、資料揭露</h2>
+          <p>除依法令規定或經您同意外，我們不會將您的個人資料提供給第三方。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">五、您的權利</h2>
+          <p>依《個人資料保護法》，您可就本店保有的個人資料，行使查詢、閱覽、複製、補正、停止利用或刪除等權利。如需行使權利，歡迎透過<a href="/contact/" class="text-gold-400 hover:text-gold-300 underline">聯絡我們</a>頁面與我們聯繫。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">六、政策更新</h2>
+          <p>本店保留隨時修訂本隱私政策的權利，修訂後將公布於本網站，恕不另行個別通知。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

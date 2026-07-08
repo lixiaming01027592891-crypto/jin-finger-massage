@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = '使用條款｜金手指按摩';
+const description = '金手指按摩使用條款說明本網站與預約服務的使用規範，包含預約、服務性質與免責事項。';
+const keywords = '使用條款,服務條款,金手指按摩';
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/terms">
+  <Navbar />
+
+  <section class="pt-32 pb-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-gold-500 text-sm tracking-widest uppercase">Terms</span>
+        <h1 class="section-title mt-2">使用條款</h1>
+        <p class="section-subtitle">使用本網站與服務前，請詳閱以下條款</p>
+      </div>
+
+      <div class="space-y-8 text-stone-300 leading-relaxed text-sm sm:text-base">
+        <p>歡迎使用金手指按摩（以下簡稱「本店」）網站與服務。當您瀏覽本網站或進行預約，即表示您同意遵守以下條款。</p>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">一、服務性質</h2>
+          <p>本店提供之按摩、指壓、油壓等服務，皆以放鬆舒壓與養生保健為目的，<strong class="text-stone-100">非醫療行為</strong>，不具治療、診斷或取代專業醫療之效果。個別體驗與感受因人而異。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">二、預約與取消</h2>
+          <p>建議您提前預約以確保時段。如需取消或變更，請提前告知，以便我們妥善安排其他客人。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">三、健康告知</h2>
+          <p>孕婦、心血管疾病患者、皮膚發炎或有傷口者，接受服務前請主動告知師傅，並建議先諮詢醫師。若因隱匿相關狀況而產生不適，本店不負相關責任。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">四、服務環境</h2>
+          <p>本店提供專業、安全、合法的服務環境。請客人共同維護良好的服務品質與秩序；本店保留對不當行為者婉拒服務之權利。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">五、智慧財產權</h2>
+          <p>本網站之文字、圖片與設計均屬本店或授權者所有，未經同意不得重製、散布或作商業使用。</p>
+        </div>
+
+        <div>
+          <h2 class="text-gold-400 text-lg font-semibold mb-2">六、條款修訂</h2>
+          <p>本店保留隨時修訂本使用條款的權利，修訂後將公布於本網站。繼續使用即視為同意修訂後之條款。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
