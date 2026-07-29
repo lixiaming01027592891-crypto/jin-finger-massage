@@ -59,7 +59,8 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
         <meta property="twitter:image" content={`${siteUrl}${ogImage}`} /> */}
     
     {/* Structured Data: LocalBusiness.
-        TODO: 客戶提供真實資料後，於 schema 補回 telephone / streetAddress / postalCode / geo；請勿使用佔位值。 */}
+        telephone / address 已依客戶提供之真實資料填入。
+        TODO: geo 座標待客戶確認後補上；請勿使用佔位值。 */}
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "HealthAndBeautyBusiness",
@@ -67,9 +68,13 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
       "description": description,
       "url": siteUrl,
       "image": `${siteUrl}${ogImage}`,
+      "telephone": "+886-913-230-787",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "台北市",
+        "streetAddress": "忠孝東路三段168號",
+        "addressLocality": "大安區",
+        "addressRegion": "臺北市",
+        "postalCode": "106084",
         "addressCountry": "TW"
       },
       "openingHoursSpecification": [
