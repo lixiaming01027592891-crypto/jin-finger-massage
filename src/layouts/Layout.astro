@@ -42,16 +42,21 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
     <meta property="og:url" content={fullCanonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    {/* og:image 暫時停用（客戶要求：分享到社群時不顯示縮圖）。
+        恢復方式：取消下一行註解即可。
+        <meta property="og:image" content={`${siteUrl}${ogImage}`} /> */}
     <meta property="og:locale" content="zh_TW" />
     <meta property="og:site_name" content="金手指按摩" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
+    {/* 無縮圖時卡片型別需為 summary；恢復縮圖時請改回 summary_large_image */}
+    <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content={fullCanonical} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
+    {/* twitter:image 暫時停用（同上）。
+        恢復方式：取消下一行註解即可。
+        <meta property="twitter:image" content={`${siteUrl}${ogImage}`} /> */}
     
     {/* Structured Data: LocalBusiness.
         TODO: 客戶提供真實資料後，於 schema 補回 telephone / streetAddress / postalCode / geo；請勿使用佔位值。 */}
