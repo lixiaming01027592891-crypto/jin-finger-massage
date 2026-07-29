@@ -25,7 +25,10 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0C0A09" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {/* 停用 favicon：原為 emoji 圖示，不適合本站。
+        data:, 為空資料 URI，可避免瀏覽器改去請求 /favicon.ico 而產生 404。
+        日後客戶提供正式 logo 圖檔時，改回 <link rel="icon" href="/favicon.svg" /> 即可。 */}
+    <link rel="icon" href="data:," />
     <link rel="sitemap" href="/sitemap-index.xml" />
     
     <!-- Primary Meta Tags -->
