@@ -38,6 +38,11 @@ const hasNext = currentPage < lastPage;
 const prevUrl = currentPage === 2 ? '/blog' : `/blog/${currentPage - 1}`;
 const nextUrl = `/blog/${currentPage + 1}`;
 
+// 分頁各自 canonical 到自己，不要全部指向第一頁——
+// Google 的分頁指引明確建議每一頁自我 canonical，否則第 2 頁之後的
+// 文章連結不會被當成獨立的可索引頁面。
+const canonicalPath = currentPage === 1 ? '/blog/' : `/blog/${currentPage}/`;
+
 const title = currentPage === 1
   ? '部落格｜金手指按摩 - 台北男士按摩知識與服務介紹'
   : `部落格第 ${currentPage} 頁｜金手指按摩`;
@@ -45,7 +50,7 @@ const description = '金手指按摩部落格分享台北男士按摩服務介�
 const keywords = '台北男士按摩,台北男士到府按摩,按摩服務介紹,按摩預約流程,按摩價格';
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical="/blog">
+<Layout title={title} description={description} keywords={keywords} canonical={canonicalPath}>
   <Navbar />
 
   <!-- Page Header -->
@@ -147,13 +152,13 @@ const keywords = '台北男士按摩,台北男士到府按摩,按摩服務介紹
         "@type": "Blog",
         "name": "金手指按摩部落格",
         "description": description,
-        "url": "https://goldenfingermassage.com/blog",
+        "url": `https://goldenfingermassage.com${canonicalPath}`,
         "publisher": { "@type": "Organization", "name": "金手指按摩" },
         "blogPost": posts.map(p => ({
           "@type": "BlogPosting",
           "headline": p.data.title,
           "description": p.data.description,
-          "url": `https://goldenfingermassage.com/blog/${p.id.replace('.md', '')}`,
+          "url": `https://goldenfingermassage.com/blog/${p.id.replace('.md', '')}/`,
           "datePublished": p.data.date,
           "image": `https://goldenfingermassage.com${p.data.ogImage || '/images/og-image.jpg'}`,
           "author": { "@type": "Organization", "name": "金手指按摩" }

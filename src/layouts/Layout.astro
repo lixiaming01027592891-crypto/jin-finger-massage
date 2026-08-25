@@ -16,7 +16,11 @@ const {
 } = Astro.props;
 
 const siteUrl = 'https://goldenfingermassage.com';
-const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
+// 正規化的是「解析後的結果」，不是只有沒傳 canonical 的情況：
+// 文章頁與分頁都會明確傳入 canonical，只補預設值的話那些頁面不會被修到。
+// 補斜線是為了對齊 <route>/index.html 的實際服務路徑，避免 canonical 指向會 308 的網址。
+const canonicalPath = canonical || '/';
+const fullCanonical = `${siteUrl}${canonicalPath.endsWith('/') ? canonicalPath : `${canonicalPath}/`}`;
 ---
 
 <!DOCTYPE html>

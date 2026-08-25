@@ -15,7 +15,9 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 const { title, description, keywords, date, category, ogImage, author } = post.data;
-const canonical = `/blog/${post.id.replace('.md', '')}`;
+// 尾斜線寫在常數上，Layout 的 canonical/og:url/twitter:url
+// 與下方 Article JSON-LD 的 url、mainEntityOfPage 就會一起正確。
+const canonical = `/blog/${post.id.replace('.md', '')}/`;
 ---
 
 <Layout title={title} description={description} keywords={keywords} canonical={canonical} ogImage={ogImage}>
