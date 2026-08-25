@@ -35,8 +35,8 @@ export async function getStaticPaths() {
 const { posts, currentPage, lastPage, totalPosts } = Astro.props;
 const hasPrev = currentPage > 1;
 const hasNext = currentPage < lastPage;
-const prevUrl = currentPage === 2 ? '/blog' : `/blog/${currentPage - 1}`;
-const nextUrl = `/blog/${currentPage + 1}`;
+const prevUrl = currentPage === 2 ? '/blog/' : `/blog/${currentPage - 1}/`;
+const nextUrl = `/blog/${currentPage + 1}/`;
 
 // 分頁各自 canonical 到自己，不要全部指向第一頁——
 // Google 的分頁指引明確建議每一頁自我 canonical，否則第 2 頁之後的
@@ -78,7 +78,7 @@ const keywords = '台北男士按摩,台北男士到府按摩,按摩服務介紹
           const ogImage = post.data.ogImage || '/images/og-image.jpg';
           const date = post.data.date;
           return (
-            <a href={`/blog/${post.id.replace('.md', '')}`} class="card-glass overflow-hidden group block hover:border-gold-500/30 transition-all duration-500">
+            <a href={`/blog/${post.id.replace('.md', '')}/`} class="card-glass overflow-hidden group block hover:border-gold-500/30 transition-all duration-500">
               <div class="relative h-48 overflow-hidden">
                 <img
                   src={ogImage}
@@ -121,7 +121,7 @@ const keywords = '台北男士按摩,台北男士到府按摩,按摩服務介紹
           <div class="flex items-center gap-1">
             {Array.from({ length: lastPage }, (_, i) => i + 1).map(num => {
               const isActive = num === currentPage;
-              const href = num === 1 ? '/blog' : `/blog/${num}`;
+              const href = num === 1 ? '/blog/' : `/blog/${num}/`;
               return isActive ? (
                 <span class="px-3 py-2 rounded-lg bg-gold-500 text-stone-950 font-bold text-sm min-w-[2.5rem] text-center">
                   {num}
@@ -174,8 +174,8 @@ const keywords = '台北男士按摩,台北男士到府按摩,按摩服務介紹
       <h2 class="text-2xl md:text-3xl font-bold text-gold-300 mb-4">想親身體驗？</h2>
       <p class="text-stone-400 mb-8">閱讀完知識，不如親自感受專業按摩的手藝。24小時營業，隨時歡迎。</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/services" class="btn-primary flex items-center justify-center gap-2">查看服務項目</a>
-        <a href="/contact" class="btn-outline">聯絡我們</a>
+        <a href="/services/" class="btn-primary flex items-center justify-center gap-2">查看服務項目</a>
+        <a href="/contact/" class="btn-outline">聯絡我們</a>
       </div>
     </div>
   </section>
