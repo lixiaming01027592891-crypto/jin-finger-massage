@@ -5,14 +5,14 @@ description: "選擇油壓按摩前，先確認產品成分、接觸部位、衣
 keywords: "台北男士油壓按摩, 按摩知識"
 date: "2026-09-26"
 category: "按摩知識"
-ogImage: "/images/articles/20260926/jin-finger-massage.png"
+ogImage: "/images/articles/20260926/jin-finger-massage.webp"
 readTime: "7 分鐘"
 author: "金手指按摩"
 ---
 
 有些人第一次預約油壓，只知道會用到按摩油，卻不清楚產品會碰到哪些部位、是否需要更換衣物、感到不適時怎麼說。詢問台北男士油壓按摩時，把這些實際問題放在價格之前，會比單看「幾分鐘」或「全身」更有用。按摩屬一般服務，不能保證治療疾病或取代醫療評估；顧客的皮膚狀況、過敏史及身體界線都應被尊重。清楚的預約資訊能讓雙方在開始前有同一個理解。
 
-![到府按摩前顧客與服務人員討論用品和空間](/images/articles/20260926/jin-finger-massage.png)
+![到府按摩前顧客與服務人員討論用品和空間](/images/articles/20260926/jin-finger-massage.webp)
 
 ## 產品名稱與成分先確認
 
